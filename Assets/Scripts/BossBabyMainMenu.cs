@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class BossBabyMainMenu : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject main;
+    [SerializeField]
+    private GameObject selectScreen;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +21,8 @@ public class BossBabyMainMenu : MonoBehaviour
     }
     public void newGame(){
         Debug.Log("New Game");
+        main.SetActive(false);
+        selectScreen.SetActive(true);
         //UnityEngine.SceneManagement.SceneManager.LoadScene('Name');
     }
     public void continueGame(){
