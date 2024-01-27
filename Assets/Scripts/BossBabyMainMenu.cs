@@ -6,11 +6,18 @@ using UnityEngine.SceneManagement;
 public class BossBabyMainMenu : MonoBehaviour
 {
     [SerializeField]
+    private bool testmode;
+    [SerializeField]
     private GameObject main;
     [SerializeField]
     private GameObject selectScreen;
     [SerializeField]
     private GameObject pauseScreen;
+    [SerializeField]
+    private GameObject victoryScreen;
+    [SerializeField]
+    private int nextLevel;
+    private bool todobautizado = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +27,10 @@ public class BossBabyMainMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Space) && testmode){
+            Debug.Log("Victory");
+            bautizadoOle();
+        }
         
     }
     public void newGame(){
@@ -52,14 +63,29 @@ public class BossBabyMainMenu : MonoBehaviour
     }
 
     public void gobackMainMenu(){
-        main.SetActive(true);
-        selectScreen.SetActive(false);
-        if(pauseScreen != null){
-            pauseScreen.SetActive(false);
+        if(todobautizado){
+            loadLevel(nextLevel);
+        }
+        else{
+            main.SetActive(true);
+            selectScreen.SetActive(false);
+            if(pauseScreen != null){
+                pauseScreen.SetActive(false);
+            }
         }
     }
 
     public void loadLevel(int name){
         SceneManager.LoadScene(name);
+    }
+
+    public void bautizadoOle(){
+        todobautizado = true;
+        main.SetActive(false);
+        selectScreen.SetActive(false);
+        victoryScreen.SetActive(true);
+        if(pauseScreen != null){
+            pauseScreen.SetActive(true);
+        }
     }
 }
