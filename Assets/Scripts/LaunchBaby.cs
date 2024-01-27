@@ -8,6 +8,9 @@ public class LaunchBaby : MonoBehaviour
     public Camera cam;
     public GameObject lineObj;
     public float force;
+    public float forceM;
+    public bool enabledInput;
+    public bool dragging = false;
     LineRenderer lineR;
 
     [SerializeField] private float minForce = 50.0f;
@@ -15,10 +18,9 @@ public class LaunchBaby : MonoBehaviour
     [SerializeField] private float minDistance = 0.5f;
     [SerializeField] private float maxDistance = 15.0f;
 
-
     private Rigidbody2D baby;
-    private bool dragging = false;
     private Vector3 startPos = Vector3.zero;
+    private Vector3 dir;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +30,7 @@ public class LaunchBaby : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (baby != null)
+        if (baby != null && enabled)
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
@@ -44,15 +46,19 @@ public class LaunchBaby : MonoBehaviour
                 if (mgt >= minDistance)
                 {
                     lineR.SetPosition(0, baby.transform.position);
-                    force = (mgt - minDistance) / (maxDistance - minDistance);
-                    force = Mathf.Clamp(force, 0, 1);
-                    force = minForce + (maxForce - minForce) * force;
+                    forceM = (mgt - minDistance) / (maxDistance - minDistance);
+                    forceM = Mathf.Clamp(forceM, 0, 1);
+                    force = minForce + (maxForce - minForce) * forceM;
                     float angle = Vector3.Angle(Vector3.right, direction);
                     if (angle > 180)
                     {
                         angle = angle - 180;
                     }
                     drawLine(10, direction.normalized * force, angle, baby.transform.position);
+                } else
+                {
+                    forceM = 0;
+                    force = 0;
                 }
 
             } else if (Input.GetKeyUp(KeyCode.Mouse0))
@@ -61,18 +67,17 @@ public class LaunchBaby : MonoBehaviour
                 float mgt = direction.sqrMagnitude;
                 if (mgt >= minDistance && mgt <= maxDistance)
                 {
-                    force = (mgt - minDistance) / (maxDistance - minDistance);
+                    forceM = (mgt - minDistance) / (maxDistance - minDistance);
                 } else if (mgt > maxDistance)
                 {
-                    force = 1.0f;
+                    forceM = 1.0f;
                 } else
                 {
-                    // throw cancel
+                    forceM = -1.0f;
                     return;
                 }
-                force = minForce + (maxForce - minForce) * force;
-                baby.simulated = true;
-                baby.velocity = direction.normalized * force;
+                force = minForce + (maxForce - minForce) * forceM;
+                dir = direction;
                 dragging = false;
                 lineR = null;
 
@@ -80,6 +85,13 @@ public class LaunchBaby : MonoBehaviour
         }
     }
 
+    public void ThrowBaby(Vector3 pos)
+    {
+        babyObj.transform.position = pos;
+        baby.simulated = true;
+        baby.velocity = dir.normalized * force;
+
+    }
     void createLine()
     {
         GameObject lineObject = Instantiate(lineObj);
@@ -90,7 +102,6 @@ public class LaunchBaby : MonoBehaviour
     {
         float veltdelta;
         float tdelta = 0.1f;
-        Debug.Log(velocity);
         float vel = velocity.sqrMagnitude/10f;
         float rads = Mathf.Deg2Rad * angle;
         lineR.positionCount = points;
