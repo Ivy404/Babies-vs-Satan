@@ -21,13 +21,13 @@ public class PriestTestScript : MonoBehaviour
         throwBaby = false;
         aimForce = 0;
         _releaseBaby = false;
-        _ready = false;
+        _ready = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.UpArrow))
+        /*if (Input.GetKey(KeyCode.UpArrow))
         {
             aimForce = 0.3f;
             Debug.Log("Force Strong");
@@ -39,28 +39,36 @@ public class PriestTestScript : MonoBehaviour
         {
             aimForce = 1.0f;
             Debug.Log("Force Low");
-        }
-        else
-        {
-            if(aimForce > 0)
-                ThrowBaby();
-            aimForce = 0;
-        }
+        }*/
+
         _animator.SetFloat("AimForce", aimForce);
+
+        if (throwBaby) // Set by the level manager
+            ThrowBaby();
     }
 
+    // method to initiate the baby throw animations
+    private void ThrowBaby()
+    {
+        throwBaby = false;
+        _ready = false; //
+        _animator.SetTrigger("Throw");
+        Debug.Log("Throw!");
+    }
+
+    // method to do the actual baby release. Called when the throw animation is finished
+    private void ReleaseBaby()
+    {
+        _releaseBaby = true;
+        _animator.SetTrigger("Relaod");
+        Debug.Log("Release!");
+    }
+
+    // method to do the baby reload. Called when the reload animation is finished
     private void ReloadBaby()
     {
         _ready = true;
         Debug.Log("Reloaded!");
-    }
-
-    private void ThrowBaby()
-    {
-        _animator.SetBool("Throw", true);
-        Debug.Log("Throw!");
-
-        _animator.SetBool("Throw", false);
     }
 
     public bool BabyReleased()
