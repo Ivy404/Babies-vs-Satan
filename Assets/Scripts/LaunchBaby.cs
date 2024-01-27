@@ -93,7 +93,7 @@ public class LaunchBaby : MonoBehaviour
                 force = minForce + (maxForce - minForce) * forceM;
                 dir = direction;
                 dragging = false;
-                lineR = null;
+                Destroy(lineR);
 
             }
         }

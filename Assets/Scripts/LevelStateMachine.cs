@@ -9,6 +9,12 @@ public class LevelStateMachine : MonoBehaviour
     private LaunchBaby babybehaviour;
     [SerializeField]
     private PriestTestScript priest;
+    [SerializeField]
+    private PicaTrigger pila;
+    [SerializeField]
+    private float winCon = 3.0f;
+
+    private float winTimer;
 
     public enum States
     {
@@ -32,7 +38,19 @@ public class LevelStateMachine : MonoBehaviour
     void Update()
     {
         // Evaluation of win con
+        if (pila.isBabyIn() && state != States.Win)
+        {
+            winTimer += Time.deltaTime;
+        }
+        else
+        {
+            winTimer = 0;
+        }
 
+        if (winTimer >= winCon && state != States.Win)
+        {
+            state = States.Win;
+        }
         // State Machine
         switch (state)
         {
@@ -47,6 +65,7 @@ public class LevelStateMachine : MonoBehaviour
                     priest.throwBaby = true;
                     state = States.Throw;
                     priest.aimForce = babybehaviour.forceM;
+                    babybehaviour.enabledInput = false;
                 }
                 else if (!babybehaviour.dragging && babybehaviour.forceM <= 0)
                 {
@@ -55,7 +74,8 @@ public class LevelStateMachine : MonoBehaviour
                 }
                 break;
             case States.Throw:
-                if (priest.BabyReleased()) // change for babyReleased
+                //if (priest.BabyReleased()) // change for babyReleased
+                if (true)
                 {
                     babybehaviour.CreateBaby();
                     babybehaviour.ThrowBaby();
@@ -63,12 +83,15 @@ public class LevelStateMachine : MonoBehaviour
                 }
                 break;
             case States.Waiting:
-                if (priest.PriestReady()) // priest ready
+                //if (priest.PriestReady()) // priest ready
+                if (true)
                 {
+                    babybehaviour.enabledInput = true;
                     state = States.Idle;
                 }
                 break;
             case States.Win:
+                Debug.Log("You win!!");
                 break;
             case States.Lose:
                 state = States.Idle;
