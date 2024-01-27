@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class LaunchBaby : MonoBehaviour
 {
-    public GameObject babyObj;
+    public GameObject babyprefab;
     public Camera cam;
     public GameObject lineObj;
+    public GameObject anchor;
     public float force;
     public float forceM;
     public bool enabledInput;
@@ -17,20 +19,32 @@ public class LaunchBaby : MonoBehaviour
     [SerializeField] private float maxForce = 150.0f;
     [SerializeField] private float minDistance = 0.5f;
     [SerializeField] private float maxDistance = 15.0f;
+    [SerializeField] private List<GameObject> babies = new List<GameObject>();
 
+    private GameObject babyObj;
     private Rigidbody2D baby;
     private Vector3 startPos = Vector3.zero;
     private Vector3 dir;
     // Start is called before the first frame update
     void Start()
     {
+
+    }
+
+    public void CreateBaby()
+    {
+        babyObj = Instantiate(babyprefab);
         baby = babyObj.GetComponent<Rigidbody2D>();
+        if (baby != null)
+        {
+            babies.Add(babyObj);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (baby != null && enabled)
+        if (enabledInput)
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
@@ -45,7 +59,7 @@ public class LaunchBaby : MonoBehaviour
                 float mgt = direction.sqrMagnitude;
                 if (mgt >= minDistance)
                 {
-                    lineR.SetPosition(0, baby.transform.position);
+                    lineR.SetPosition(0, anchor.transform.position);
                     forceM = (mgt - minDistance) / (maxDistance - minDistance);
                     forceM = Mathf.Clamp(forceM, 0, 1);
                     force = minForce + (maxForce - minForce) * forceM;
@@ -54,7 +68,7 @@ public class LaunchBaby : MonoBehaviour
                     {
                         angle = angle - 180;
                     }
-                    drawLine(10, direction.normalized * force, angle, baby.transform.position);
+                    drawLine(10, direction.normalized * force, angle, anchor.transform.position);
                 } else
                 {
                     forceM = 0;
@@ -85,9 +99,9 @@ public class LaunchBaby : MonoBehaviour
         }
     }
 
-    public void ThrowBaby(Vector3 pos)
+    public void ThrowBaby()
     {
-        babyObj.transform.position = pos;
+        babyObj.transform.position = anchor.transform.position;
         baby.simulated = true;
         baby.velocity = dir.normalized * force;
 
