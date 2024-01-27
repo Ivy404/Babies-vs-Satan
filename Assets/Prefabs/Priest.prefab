@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7362807036114726297}
   - component: {fileID: 3825350910073612699}
   - component: {fileID: 1264387223898785654}
+  - component: {fileID: 4863063854149276347}
   m_Layer: 0
   m_Name: Priest
   m_TagString: Untagged
@@ -122,3 +123,15 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &4863063854149276347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3092901284508624758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f03ef83de9be740ac07ed2b0d6f9b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
