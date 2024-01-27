@@ -53,7 +53,7 @@ public class LaunchBaby : MonoBehaviour
                 createLine();
                 // Vector2 wp = cam.ScreenToWorldPoint(Input.mousePosition);
                 //baby.AddForce(new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * force);
-            } else if (Input.GetKey(KeyCode.Mouse0))
+            } else if (Input.GetKey(KeyCode.Mouse0) && dragging)
             {
                 Vector3 direction = startPos - cam.ScreenToWorldPoint(Input.mousePosition);
                 float mgt = direction.sqrMagnitude;
@@ -75,7 +75,7 @@ public class LaunchBaby : MonoBehaviour
                     force = 0;
                 }
 
-            } else if (Input.GetKeyUp(KeyCode.Mouse0))
+            } else if (Input.GetKeyUp(KeyCode.Mouse0) && dragging)
             {
                 Vector3 direction = startPos - cam.ScreenToWorldPoint(Input.mousePosition);
                 float mgt = direction.sqrMagnitude;
@@ -128,6 +128,14 @@ public class LaunchBaby : MonoBehaviour
                 0
                 ));
 
+        }
+    }
+
+    public void KillBabies()
+    {
+        for (int i = babies.Count - 1; i >= 0 ; i--)
+        {
+            Destroy(babies[i]);
         }
     }
 }

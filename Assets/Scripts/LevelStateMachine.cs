@@ -37,6 +37,8 @@ public class LevelStateMachine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //  debug restart
+        if (Input.GetKeyDown(KeyCode.K)) { babybehaviour.KillBabies(); }
         // Evaluation of win con
         if (pila.isBabyIn() && state != States.Win)
         {
@@ -65,6 +67,7 @@ public class LevelStateMachine : MonoBehaviour
                 {
                     priest.throwBaby = true;
                     state = States.Throw;
+                    priest.aimForce = 0;
                     babybehaviour.enabledInput = false;
                 }
                 else if (!babybehaviour.dragging && babybehaviour.forceM < 0)

@@ -16,11 +16,18 @@ public class BossBabyMainMenu : MonoBehaviour
     [SerializeField]
     private GameObject victoryScreen;
     [SerializeField]
+    private GameObject roulete;
+    [SerializeField]
+    private GameObject namemsg;
+    [SerializeField]
     private int nextLevel;
     [SerializeField]
     private bool inmainmenu = false;
     private bool todobautizado = false;
     private bool pausado = false;
+    [SerializeField]
+    private float waitUntil = 4;
+    private float timewon = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,13 +42,22 @@ public class BossBabyMainMenu : MonoBehaviour
             bautizadoOle();
         }
         
-        if(Input.GetKeyDown(KeyCode.Escape) && !inmainmenu){
+        if(Input.GetKeyDown(KeyCode.Escape) && !inmainmenu && !todobautizado){
             if(pausado){
                 continueGame();
                 pausado = !pausado;
             }else{
                 Pause();
                 pausado = !pausado;
+            }
+        }
+
+        if(todobautizado){
+            if(timewon < waitUntil){
+                timewon += Time.deltaTime;
+            }else{
+                roulete.SetActive(false);
+                namemsg.SetActive(true);
             }
         }
     }
