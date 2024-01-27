@@ -9,9 +9,10 @@ public class PriestTestScript : MonoBehaviour
 
     [SerializeField] private bool _ready;
     [SerializeField] private bool _releaseBaby;
+    [SerializeField] private Transform _babySlot;
     private Animator _animator;
 
-    
+    private
 
     // Start is called before the first frame update
     void Start()
@@ -48,13 +49,13 @@ public class PriestTestScript : MonoBehaviour
         _animator.SetFloat("AimForce", aimForce);
     }
 
-    void ReloadBaby()
+    private void ReloadBaby()
     {
         _ready = true;
         Debug.Log("Reloaded!");
     }
 
-    void ThrowBaby()
+    private void ThrowBaby()
     {
         _animator.SetBool("Throw", true);
         Debug.Log("Throw!");
@@ -62,11 +63,11 @@ public class PriestTestScript : MonoBehaviour
         _animator.SetBool("Throw", false);
     }
 
-    bool BabyReleased()
+    public bool BabyReleased()
     {
         return _releaseBaby;
     }
-    bool PriestReady()
+    public bool PriestReady()
     {
         return _ready;
     }
