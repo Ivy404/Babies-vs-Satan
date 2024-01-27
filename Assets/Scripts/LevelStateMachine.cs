@@ -60,22 +60,21 @@ public class LevelStateMachine : MonoBehaviour
                 break;
             case States.Playing:
                 // set priest variable to priest force: aimForce with forceM
+                priest.aimForce = babybehaviour.forceM;
                 if (!babybehaviour.dragging && babybehaviour.forceM > 0) // player released the click at enough distance
                 {
                     priest.throwBaby = true;
                     state = States.Throw;
-                    priest.aimForce = babybehaviour.forceM;
                     babybehaviour.enabledInput = false;
                 }
                 else if (!babybehaviour.dragging && babybehaviour.forceM <= 0)
                 {
-                    state = States.Idle;
                     priest.aimForce = 0;
+                    state = States.Idle;
                 }
                 break;
             case States.Throw:
-                //if (priest.BabyReleased()) // change for babyReleased
-                if (true)
+                if (priest.BabyReleased()) // change for babyReleased
                 {
                     babybehaviour.CreateBaby();
                     babybehaviour.ThrowBaby();
@@ -83,8 +82,7 @@ public class LevelStateMachine : MonoBehaviour
                 }
                 break;
             case States.Waiting:
-                //if (priest.PriestReady()) // priest ready
-                if (true)
+                if (priest.PriestReady()) // priest ready
                 {
                     babybehaviour.enabledInput = true;
                     state = States.Idle;
