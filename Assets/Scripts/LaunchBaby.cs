@@ -130,4 +130,12 @@ public class LaunchBaby : MonoBehaviour
 
         }
     }
+
+    public void KillBabies()
+    {
+        for (int i = babies.Count - 1; i >= 0 ; i--)
+        {
+            Destroy(babies[i]);
+        }
+    }
 }
