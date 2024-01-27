@@ -48,6 +48,7 @@ public class PriestTestScript : MonoBehaviour
     {
         _releaseBaby = true;
         _animator.SetTrigger("Reload");
+
         Debug.Log("Release!");
     }
 
