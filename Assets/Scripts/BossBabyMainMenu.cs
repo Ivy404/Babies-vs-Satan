@@ -17,7 +17,10 @@ public class BossBabyMainMenu : MonoBehaviour
     private GameObject victoryScreen;
     [SerializeField]
     private int nextLevel;
+    [SerializeField]
+    private bool inmainmenu = false;
     private bool todobautizado = false;
+    private bool pausado = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +35,15 @@ public class BossBabyMainMenu : MonoBehaviour
             bautizadoOle();
         }
         
+        if(Input.GetKeyDown(KeyCode.Escape) && !inmainmenu){
+            if(pausado){
+                continueGame();
+                pausado = !pausado;
+            }else{
+                Pause();
+                pausado = !pausado;
+            }
+        }
     }
     public void newGame(){
         Debug.Log("New Game");
@@ -85,7 +97,7 @@ public class BossBabyMainMenu : MonoBehaviour
         selectScreen.SetActive(false);
         victoryScreen.SetActive(true);
         if(pauseScreen != null){
-            pauseScreen.SetActive(true);
+            pauseScreen.SetActive(false);
         }
     }
 }
