@@ -53,8 +53,8 @@ MonoBehaviour:
   forceM: 0
   enabledInput: 0
   dragging: 0
-  minForce: 5
-  maxForce: 10
+  minForce: 2
+  maxForce: 20
   minDistance: 0.5
   maxDistance: 15
   babies: []

@@ -105,6 +105,9 @@ public class LaunchBaby : MonoBehaviour
         baby.simulated = true;
         baby.velocity = dir.normalized * force;
 
+        // PLAY SOUND THROW
+        AudioManager.audioManagerRef.PlaySoundWithRandomPitch("baby_blah");
+
     }
     void createLine()
     {
