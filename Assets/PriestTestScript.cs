@@ -5,8 +5,8 @@ using UnityEngine;
 public class PriestTestScript : MonoBehaviour
 {
     [SerializeField] public bool throwBaby;
+    [SerializeField] public  float aimForce;
 
-    [SerializeField] private float _aimForce;
     [SerializeField] private bool _releaseBaby;
     private Animator _animator;
 
