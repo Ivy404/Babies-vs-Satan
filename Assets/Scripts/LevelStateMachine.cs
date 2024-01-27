@@ -9,8 +9,6 @@ public class LevelStateMachine : MonoBehaviour
     private LaunchBaby babybehaviour;
     [SerializeField]
     private PriestTestScript priest;
-    [SerializeField]
-    private Transform anchor;
 
     public enum States
     {
@@ -57,7 +55,8 @@ public class LevelStateMachine : MonoBehaviour
             case States.Throw:
                 if (priest != null) // change for babyReleased
                 {
-                    babybehaviour.ThrowBaby(Vector3.zero); // get anchor
+                    babybehaviour.CreateBaby();
+                    babybehaviour.ThrowBaby();
                     state = States.Waiting;
                 }
                 break;
