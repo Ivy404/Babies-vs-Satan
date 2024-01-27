@@ -4,13 +4,21 @@ using UnityEngine;
 
 public class PriestTestScript : MonoBehaviour
 {
+    [SerializeField] public bool throwBaby;
+
     [SerializeField] private float _aimForce;
+    [SerializeField] private bool _releaseBaby;
     private Animator _animator;
+
+    
 
     // Start is called before the first frame update
     void Start()
     {
         _animator = GetComponent<Animator>();
+        _aimForce = 0;
+        _releaseBaby = false;
+        throwBaby = false;
     }
 
     // Update is called once per frame
@@ -44,5 +52,10 @@ public class PriestTestScript : MonoBehaviour
         Debug.Log("Throw!");
 
         _animator.SetBool("Throw", false);
+    }
+
+    bool BabyReleased()
+    {
+        return _releaseBaby;
     }
 }
