@@ -93,6 +93,7 @@ MonoBehaviour:
   windtrig:
   - {fileID: 7203521016405866638}
   - {fileID: 4498613487836519051}
+  - {fileID: 2622850703266532513}
   shards:
   - {fileID: 5202867122243908344}
   - {fileID: 6547564698209076627}
@@ -333,6 +334,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 4667511864140525401}
   m_SourcePrefab: {fileID: 4843985084834002234, guid: 3b4347d616de8654c8a7673821be1f7e, type: 3}
+--- !u!1 &2622850703266532513 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 558580837604631819, guid: 3b4347d616de8654c8a7673821be1f7e, type: 3}
+  m_PrefabInstance: {fileID: 2568818284041759146}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3642600144417854769 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7986189361177264997, guid: 3b4347d616de8654c8a7673821be1f7e, type: 3}
