@@ -17,7 +17,7 @@ public class PanCamVictory : MonoBehaviour
     private float zoomIn = 1f;
 
     private float zoomOut;
-    private bool isPanning = false;
+    public bool isPanning = false;
     private Vector3 orgPan;
     private float panTimer = 0f;
     private Vector3 npos;
@@ -39,7 +39,7 @@ public class PanCamVictory : MonoBehaviour
 
     public void victory()
     {
-        npos = target.transform.position + Vector3.up;
+        npos = target.transform.position + Vector3.up * offset;
         npos.z = orgPan.z;
         isPanning = true;
     }
@@ -50,7 +50,6 @@ public class PanCamVictory : MonoBehaviour
 
     void SmoothMove(Vector3 startpos, Vector3 endpos, float seconds)
     {
-        Debug.Log("I´m here");
         if ( panTimer < 1.0 && isPanning)
         {
             panTimer += Time.deltaTime / seconds;

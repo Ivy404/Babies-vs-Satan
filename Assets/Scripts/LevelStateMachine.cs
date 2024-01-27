@@ -19,6 +19,7 @@ public class LevelStateMachine : MonoBehaviour
     private PanCamVictory camManager;
 
     private float winTimer;
+    private bool victoryMenu = false;
 
     public enum States
     {
@@ -57,7 +58,6 @@ public class LevelStateMachine : MonoBehaviour
         {
             state = States.Win;
             Debug.Log("You win!!");
-            menu.bautizadoOle();
             camManager.victory();
         }
         // State Machine
@@ -98,6 +98,11 @@ public class LevelStateMachine : MonoBehaviour
                 }
                 break;
             case States.Win:
+                if (!camManager.isPanning && !victoryMenu)
+                {
+                    menu.bautizadoOle();
+                    victoryMenu = true;
+                }
                 break;
             case States.Lose:
                 state = States.Idle;
