@@ -53,7 +53,7 @@ MonoBehaviour:
   forceM: 0
   enabledInput: 0
   dragging: 0
-  minForce: 5
+  minForce: 2
   maxForce: 10
   minDistance: 0.5
   maxDistance: 15
