@@ -46,7 +46,7 @@ public class PriestTestScript : MonoBehaviour
     private void ReleaseBaby()
     {
         _releaseBaby = true;
-        _animator.SetTrigger("Relaod");
+        _animator.SetTrigger("Reload");
         Debug.Log("Release!");
     }
 
