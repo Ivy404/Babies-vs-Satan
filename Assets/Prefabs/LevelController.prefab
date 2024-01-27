@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6012030345978431095}
   - component: {fileID: 2561468612202220128}
+  - component: {fileID: 4777414701349974086}
   m_Layer: 0
   m_Name: LevelController
   m_TagString: Untagged
@@ -44,11 +45,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32c4fc2936a5e9145a3e3fae27aae2d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  babyObj: {fileID: 0}
+  babyprefab: {fileID: 1467242800901786156, guid: f0489397c5e31154ca5275384d7db199, type: 3}
   cam: {fileID: 0}
   lineObj: {fileID: 8386811928610738564, guid: 2eb8d41f39755824e87e3b7081a5a1ef, type: 3}
+  anchor: {fileID: 0}
   force: 0
+  forceM: 0
+  enabledInput: 0
+  dragging: 0
   minForce: 5
   maxForce: 10
   minDistance: 0.5
   maxDistance: 15
+  babies: []
+--- !u!114 &4777414701349974086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397760464054740582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5850dc5e5773d56468c8ec8f151f7abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  babybehaviour: {fileID: 2561468612202220128}
+  priest: {fileID: 0}
+  pila: {fileID: 0}
+  winCon: 3
+  state: 0
