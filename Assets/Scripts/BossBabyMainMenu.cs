@@ -26,7 +26,7 @@ public class BossBabyMainMenu : MonoBehaviour
     private bool todobautizado = false;
     private bool pausado = false;
     [SerializeField]
-    private float waitUntil = 20.0f;
+    private float waitUntil = 4.0f;
     private float timewon = 0f;
     private RectTransform spinO;
     // Start is called before the first frame update
@@ -56,7 +56,7 @@ public class BossBabyMainMenu : MonoBehaviour
         if(todobautizado){
             if(timewon < waitUntil)
             {
-                makeRotations(3.5f);
+                makeRotations(3.0f + Random.value);
                 timewon += Time.deltaTime;
             }else{
                 namemsg.SetActive(true);
@@ -66,7 +66,7 @@ public class BossBabyMainMenu : MonoBehaviour
 
     void makeRotations(float rots)
     {
-        float rot = Mathf.Lerp(0f, 360f*rots, 1f - Mathf.Pow(1f - timewon / waitUntil, 4));
+        float rot = Mathf.Lerp(0f, 360f*rots, 1f - Mathf.Pow(1f - timewon / waitUntil, 2));
         //rot = (rot % 360f) - 180f;
         Debug.Log(rot);
         Vector3 angles = spinO.eulerAngles;
