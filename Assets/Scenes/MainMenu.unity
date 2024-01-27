@@ -462,6 +462,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1811068574}
     m_Modifications:
     - target: {fileID: 557125787059240081, guid: d960228fc25475444a11be9334cfbf98, type: 3}
+      propertyPath: inmainmenu
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 557125787059240081, guid: d960228fc25475444a11be9334cfbf98, type: 3}
       propertyPath: selectScreen
       value: 
       objectReference: {fileID: 587553376}
