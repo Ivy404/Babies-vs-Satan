@@ -26,12 +26,13 @@ public class BossBabyMainMenu : MonoBehaviour
     private bool todobautizado = false;
     private bool pausado = false;
     [SerializeField]
-    private float waitUntil = 4;
+    private float waitUntil = 20.0f;
     private float timewon = 0f;
+    private RectTransform spinO;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -53,13 +54,24 @@ public class BossBabyMainMenu : MonoBehaviour
         }
 
         if(todobautizado){
-            if(timewon < waitUntil){
+            if(timewon < waitUntil)
+            {
+                makeRotations(3.5f);
                 timewon += Time.deltaTime;
             }else{
-                roulete.SetActive(false);
                 namemsg.SetActive(true);
             }
         }
+    }
+
+    void makeRotations(float rots)
+    {
+        float rot = Mathf.Lerp(0f, 360f*rots, 1f - Mathf.Pow(1f - timewon / waitUntil, 4));
+        //rot = (rot % 360f) - 180f;
+        Debug.Log(rot);
+        Vector3 angles = spinO.eulerAngles;
+        angles.z = rot; // + rotationSpeed for right button
+        spinO.eulerAngles = angles;
     }
     public void newGame(){
         Debug.Log("New Game");
@@ -112,7 +124,8 @@ public class BossBabyMainMenu : MonoBehaviour
         main.SetActive(false);
         selectScreen.SetActive(false);
         victoryScreen.SetActive(true);
-        if(pauseScreen != null){
+        spinO = roulete.GetComponent<RectTransform>();
+        if (pauseScreen != null){
             pauseScreen.SetActive(false);
         }
     }
