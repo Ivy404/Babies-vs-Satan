@@ -27,20 +27,6 @@ public class PriestTestScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (Input.GetKey(KeyCode.UpArrow))
-        {
-            aimForce = 0.3f;
-            Debug.Log("Force Strong");
-        } else if (Input.GetKey(KeyCode.RightArrow))
-        {
-            aimForce = 0.7f;
-            Debug.Log("Force Mid");
-        } else if (Input.GetKey(KeyCode.DownArrow))
-        {
-            aimForce = 1.0f;
-            Debug.Log("Force Low");
-        }*/
-
         _animator.SetFloat("AimForce", aimForce);
 
         if (throwBaby) // Set by the level manager
@@ -51,7 +37,7 @@ public class PriestTestScript : MonoBehaviour
     private void ThrowBaby()
     {
         throwBaby = false;
-        _ready = false; //
+        _ready = false; // This will be false until I reaload
         _animator.SetTrigger("Throw");
         Debug.Log("Throw!");
     }
