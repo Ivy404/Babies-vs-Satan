@@ -9,7 +9,7 @@ public class PriestTestScript : MonoBehaviour
 
     [SerializeField] private bool _ready;
     [SerializeField] private bool _releaseBaby;
-    [SerializeField] private Transform _babySlot;
+    [SerializeField] private GameObject _babySlot;
     private Animator _animator;
 
     private
@@ -37,8 +37,9 @@ public class PriestTestScript : MonoBehaviour
     private void ThrowBaby()
     {
         throwBaby = false;
-        _ready = false; // This will be false until I reaload
+        _ready = false; // This will be false until I reload
         _animator.SetTrigger("Throw");
+        if(_babySlot != null) _babySlot.SetActive(false);
         Debug.Log("Throw!");
     }
 
@@ -53,6 +54,7 @@ public class PriestTestScript : MonoBehaviour
     // method to do the baby reload. Called when the reload animation is finished
     private void ReloadBaby()
     {
+        if (_babySlot != null) _babySlot.SetActive(true);
         _ready = true;
         Debug.Log("Reloaded!");
     }
