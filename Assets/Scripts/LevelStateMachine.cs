@@ -13,6 +13,10 @@ public class LevelStateMachine : MonoBehaviour
     private PicaTrigger pila;
     [SerializeField]
     private float winCon = 3.0f;
+    [SerializeField]
+    private BossBabyMainMenu menu;
+    [SerializeField]
+    private PanCamVictory camManager;
 
     private float winTimer;
 
@@ -52,6 +56,9 @@ public class LevelStateMachine : MonoBehaviour
         if (winTimer >= winCon && state != States.Win)
         {
             state = States.Win;
+            Debug.Log("You win!!");
+            menu.bautizadoOle();
+            camManager.victory();
         }
         // State Machine
         switch (state)
@@ -91,7 +98,6 @@ public class LevelStateMachine : MonoBehaviour
                 }
                 break;
             case States.Win:
-                Debug.Log("You win!!");
                 break;
             case States.Lose:
                 state = States.Idle;

@@ -8,10 +8,6 @@ public class PicaTrigger : MonoBehaviour
     private BoxCollider2D trig;
     [SerializeField]
     private GameObject topPica;
-    [SerializeField]
-    private PanCamVictory camListener;
-    [SerializeField]
-    private BossBabyMainMenu cm2;
     private bool babyInside = false;
     
     // Start is called before the first frame update
@@ -31,8 +27,6 @@ public class PicaTrigger : MonoBehaviour
             other.gameObject.name
         );
         topPica.SetActive(false);
-        cm2.bautizadoOle();
-        camListener.victory();
     }
 
     private void OnTriggerExit2D(Collider2D other) {

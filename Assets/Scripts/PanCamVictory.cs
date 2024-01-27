@@ -10,16 +10,17 @@ public class PanCamVictory : MonoBehaviour
     [SerializeField] 
     private GameObject target;
     [SerializeField] 
-    [Range(0.0f, 1.0f)]
-    private float weight = 0.5f;
+    private float duration = 3.0f;
     [SerializeField] 
-    private float sensibility = 0.2f;
+    private float offset = 1.0f;
     [SerializeField] 
     private float zoomIn = 1f;
-    [SerializeField] 
-    private float zoomOut = 0.2f;
+
+    private float zoomOut;
     private bool isPanning = false;
     private Vector3 orgPan;
+    private float panTimer = 0f;
+    private Vector3 npos;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,29 +31,35 @@ public class PanCamVictory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isPanning){
-            pan();
-            if((target.transform.position - mCamera.transform.position).sqrMagnitude < sensibility){
-                isPanning = false;
-            }
+        if (isPanning){
+            SmoothMove(orgPan, npos, duration);
+            //if((target.transform.position - mCamera.transform.position).sqrMagnitude < sensibility) isPanning = false;
         }
     }
 
-    public void victory(){
+    public void victory()
+    {
+        npos = target.transform.position + Vector3.up;
+        npos.z = orgPan.z;
         isPanning = true;
-    }
-
-    void pan(){
-        //float nscl = ((zoomIn - mCamera.orthographicSize) / 2f) + weight*0.01f;
-        float d = (mCamera.transform.position - orgPan).sqrMagnitude;
-        d = d/(target.transform.position - orgPan).sqrMagnitude;
-        Vector3 npos = (target.transform.position - mCamera.transform.position) * weight;
-        npos.z = 0 ;
-        mCamera.transform.position = mCamera.transform.position + npos;
-        mCamera.orthographicSize = ((1-d) * zoomIn) + ((0+d) * zoomOut);
     }
 
     public void setTarget(GameObject go){
         target = go;
+    }
+
+    void SmoothMove(Vector3 startpos, Vector3 endpos, float seconds)
+    {
+        Debug.Log("I´m here");
+        if ( panTimer < 1.0 && isPanning)
+        {
+            panTimer += Time.deltaTime / seconds;
+            mCamera.transform.position = Vector3.Lerp(startpos, endpos, Mathf.SmoothStep(0.0f, 1.0f, panTimer));
+            mCamera.orthographicSize = Mathf.Lerp(zoomOut, zoomIn, Mathf.SmoothStep(0.0f, 1.0f, panTimer));
+        } else
+        {
+            isPanning=false;
+            panTimer=0;
+        }
     }
 }
