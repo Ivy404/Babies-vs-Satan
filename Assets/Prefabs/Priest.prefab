@@ -96,7 +96,7 @@ MonoBehaviour:
   aimForce: 0
   _ready: 0
   _releaseBaby: 0
-  _babySlot: {fileID: 6176809865442389068}
+  _babySlot: {fileID: 4041684194756260620}
 --- !u!1001 &833717478525594145
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -137,13 +137,17 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.3207547
       objectReference: {fileID: 0}
+    - target: {fileID: 6743531903067373257, guid: f26786f8a3590a749a7106d91c52f154, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7201901420996299285, guid: f26786f8a3590a749a7106d91c52f154, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.83
+      value: 2.32
       objectReference: {fileID: 0}
     - target: {fileID: 7201901420996299285, guid: f26786f8a3590a749a7106d91c52f154, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.89
+      value: 6.38
       objectReference: {fileID: 0}
     - target: {fileID: 7201901420996299285, guid: f26786f8a3590a749a7106d91c52f154, type: 3}
       propertyPath: m_LocalPosition.z
@@ -256,6 +260,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5502a7cbd5dafe443836eeae918c090a, type: 3}
+--- !u!1 &4041684194756260620 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2300785209920890049, guid: 5502a7cbd5dafe443836eeae918c090a, type: 3}
+  m_PrefabInstance: {fileID: 2880322071509817293}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6176809865442389068 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8232749930664246145, guid: 5502a7cbd5dafe443836eeae918c090a, type: 3}
