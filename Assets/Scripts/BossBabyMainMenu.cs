@@ -29,6 +29,7 @@ public class BossBabyMainMenu : MonoBehaviour
     private float waitUntil = 4.0f;
     private float timewon = 0f;
     private RectTransform spinO;
+    private float fRotations;
     // Start is called before the first frame update
     void Start()
     {
@@ -56,7 +57,7 @@ public class BossBabyMainMenu : MonoBehaviour
         if(todobautizado){
             if(timewon < waitUntil)
             {
-                makeRotations(3.0f + Random.value);
+                makeRotations();
                 timewon += Time.deltaTime;
             }else{
                 namemsg.SetActive(true);
@@ -64,9 +65,9 @@ public class BossBabyMainMenu : MonoBehaviour
         }
     }
 
-    void makeRotations(float rots)
+    void makeRotations()
     {
-        float rot = Mathf.Lerp(0f, 360f*rots, 1f - Mathf.Pow(1f - timewon / waitUntil, 2));
+        float rot = Mathf.Lerp(0f, 360f*fRotations, 1f - Mathf.Pow(1f - timewon / waitUntil, 4));
         //rot = (rot % 360f) - 180f;
         Debug.Log(rot);
         Vector3 angles = spinO.eulerAngles;
@@ -125,6 +126,7 @@ public class BossBabyMainMenu : MonoBehaviour
         selectScreen.SetActive(false);
         victoryScreen.SetActive(true);
         spinO = roulete.GetComponent<RectTransform>();
+        fRotations = 3.0f + Random.value;
         if (pauseScreen != null){
             pauseScreen.SetActive(false);
         }
