@@ -22,6 +22,7 @@ public class LaunchBaby : MonoBehaviour
     [SerializeField] private List<GameObject> babies = new List<GameObject>();
 
     private GameObject babyObj;
+    private GameObject cLineObj;
     private Rigidbody2D baby;
     private Vector3 startPos = Vector3.zero;
     private Vector3 dir;
@@ -57,9 +58,10 @@ public class LaunchBaby : MonoBehaviour
             {
                 Vector3 direction = startPos - cam.ScreenToWorldPoint(Input.mousePosition);
                 float mgt = direction.sqrMagnitude;
+                lineR.SetPosition(0, anchor.transform.position);
                 if (mgt >= minDistance)
                 {
-                    lineR.SetPosition(0, anchor.transform.position);
+                    lineR.enabled = true;
                     forceM = (mgt - minDistance) / (maxDistance - minDistance);
                     forceM = Mathf.Clamp(forceM, 0, 1);
                     force = minForce + (maxForce - minForce) * forceM;
@@ -71,6 +73,7 @@ public class LaunchBaby : MonoBehaviour
                     drawLine(10, direction.normalized * force, angle, anchor.transform.position);
                 } else
                 {
+                    lineR.enabled = false;
                     forceM = 0;
                     force = 0;
                 }
@@ -93,7 +96,7 @@ public class LaunchBaby : MonoBehaviour
                 force = minForce + (maxForce - minForce) * forceM;
                 dir = direction;
                 dragging = false;
-                Destroy(lineR);
+                Destroy(cLineObj);
 
             }
         }
@@ -111,20 +114,15 @@ public class LaunchBaby : MonoBehaviour
     }
     void createLine()
     {
-        GameObject lineObject = Instantiate(lineObj);
-        lineR = lineObject.GetComponent<LineRenderer>();
+        cLineObj = Instantiate(lineObj);
+        lineR = cLineObj.GetComponent<LineRenderer>();
     }
 
     void drawLine(int points, Vector3 velocity, float angle, Vector3 position)
     {
-        float veltdelta;
         float tdelta = 0.1f;
-        float vel = velocity.sqrMagnitude/10f;
-        float rads = Mathf.Deg2Rad * angle;
         lineR.positionCount = points;
         for (int i = 1; i < points; i++) {
-            veltdelta = vel * tdelta * i;
-            //lineR.SetPosition(i, new Vector3(position.x + vel* (tdelta * i) * Mathf.Cos(rads), position.y, 0));
             lineR.SetPosition(i, new Vector3(
                 position.x + velocity.x * i * tdelta,
                 position.y + velocity.y * i * tdelta - (1f / 2f) * (9.81f) * Mathf.Pow(tdelta * i, 2),

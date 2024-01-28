@@ -15,8 +15,7 @@ public class BumperBehaviour : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bumper"))
         {
-            Vector2 vector = Quaternion.Euler(0, 0, collision.gameObject.transform.eulerAngles.z) * Vector2.up;
-            body.velocity = body.velocity + vector*collision.gameObject.GetComponent<BumperScript>().bumpforce ; 
+            collision.gameObject.GetComponent<BumperScript>().HitBumper(body);
         }
     }
 }
