@@ -10,10 +10,12 @@ public class PriestTestScript : MonoBehaviour
     [SerializeField] private bool _ready;
     [SerializeField] private bool _releaseBaby;
     [SerializeField] private GameObject _babySlot;
+
+    [SerializeField] private Color[] skinColors;
     private Animator _animator;
 
-    private
-
+    public Color skincolor;
+    public Color clothcolor;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,18 @@ public class PriestTestScript : MonoBehaviour
         aimForce = 0;
         _releaseBaby = false;
         _ready = true;
+
+        Transform bb = _babySlot.transform.GetChild(0).GetChild(0);
+        int choiceColor = Random.Range(0, skinColors.Length);
+        skincolor = skinColors[choiceColor];
+        bb.GetChild(2).GetComponent<SpriteRenderer>().color = skinColors[choiceColor]; // face
+        clothcolor = new Color(
+        Random.Range(0.2f, 0.8f),
+        Random.Range(0.2f, 0.8f),
+        Random.Range(0.2f, 0.8f),
+        1.0f
+        );
+        bb.GetChild(3).GetComponent<SpriteRenderer>().color = clothcolor; // cloth
     }
 
     // Update is called once per frame
@@ -55,6 +69,17 @@ public class PriestTestScript : MonoBehaviour
     // method to do the baby reload. Called when the reload animation is finished
     private void ReloadBaby()
     {
+        Transform bb = _babySlot.transform.GetChild(0).GetChild(0);
+        int choiceColor = Random.Range(0, skinColors.Length);
+        skincolor = skinColors[choiceColor];
+        bb.GetChild(2).GetComponent<SpriteRenderer>().color = skinColors[choiceColor]; // face
+        clothcolor = new Color(
+        Random.Range(0.2f, 0.8f),
+        Random.Range(0.2f, 0.8f),
+        Random.Range(0.2f, 0.8f),
+        1.0f
+        );
+        bb.GetChild(3).GetComponent<SpriteRenderer>().color = clothcolor; // cloth
         if (_babySlot != null) _babySlot.SetActive(true);
         _ready = true;
         //Debug.Log("Reloaded!");
