@@ -133,7 +133,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 759092729990859922, guid: 828c71450442aa44d973663c666e4063, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.76
+      value: -10.8
       objectReference: {fileID: 0}
     - target: {fileID: 759092729990859922, guid: 828c71450442aa44d973663c666e4063, type: 3}
       propertyPath: m_LocalPosition.y
@@ -199,8 +199,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 1684176726}
     m_Modifications:
     - target: {fileID: 4014767883087813349, guid: d44a9b34e22fe26418ee0824e3779b67, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4014767883087813349, guid: d44a9b34e22fe26418ee0824e3779b67, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.17
+      value: -13.56
       objectReference: {fileID: 0}
     - target: {fileID: 4014767883087813349, guid: d44a9b34e22fe26418ee0824e3779b67, type: 3}
       propertyPath: m_LocalPosition.y
@@ -271,7 +275,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8683365264275748375, guid: a13c9f4d4bd05d44286b8c5f4c022db4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.75
+      value: -3.49
       objectReference: {fileID: 0}
     - target: {fileID: 8683365264275748375, guid: a13c9f4d4bd05d44286b8c5f4c022db4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -380,7 +384,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5870581432542241233, guid: 8e18530b3ccca9149a9e4f86c2585c83, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.6
+      value: -6.43
       objectReference: {fileID: 0}
     - target: {fileID: 6557937869728524719, guid: 8e18530b3ccca9149a9e4f86c2585c83, type: 3}
       propertyPath: m_LocalPosition.x
@@ -392,7 +396,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8268740213306050038, guid: 8e18530b3ccca9149a9e4f86c2585c83, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.95
+      value: -8.69
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
