@@ -106,9 +106,6 @@ public class LevelStateMachine : MonoBehaviour
                 {
                     menu.bautizadoOle();
                     victoryMenu = true;
-
-                    // PLAY SOUND Baptized
-                    AudioManager.audioManagerRef.PlaySound("victory_voices");
                 }
                 break;
             case States.Lose:
