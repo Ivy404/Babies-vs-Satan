@@ -40,7 +40,7 @@ public class PriestTestScript : MonoBehaviour
         _ready = false; // This will be false until I reload
         _animator.SetTrigger("Throw");
         if(_babySlot != null) _babySlot.SetActive(false);
-        Debug.Log("Throw!");
+        //Debug.Log("Throw!");
     }
 
     // method to do the actual baby release. Called when the throw animation is finished
@@ -49,7 +49,7 @@ public class PriestTestScript : MonoBehaviour
         _releaseBaby = true;
         _animator.SetTrigger("Reload");
 
-        Debug.Log("Release!");
+        //Debug.Log("Release!");
     }
 
     // method to do the baby reload. Called when the reload animation is finished
@@ -57,7 +57,7 @@ public class PriestTestScript : MonoBehaviour
     {
         if (_babySlot != null) _babySlot.SetActive(true);
         _ready = true;
-        Debug.Log("Reloaded!");
+        //Debug.Log("Reloaded!");
     }
 
     public bool BabyReleased()
