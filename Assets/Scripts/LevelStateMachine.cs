@@ -59,6 +59,10 @@ public class LevelStateMachine : MonoBehaviour
             state = States.Win;
             Debug.Log("You win!!");
             camManager.victory();
+
+            // PLAY SOUNDS victory
+            AudioManager.audioManagerRef.PlaySound("victory_fanfare");
+            AudioManager.audioManagerRef.PlaySound("victory_cheers");
         }
         // State Machine
         switch (state)
@@ -102,6 +106,9 @@ public class LevelStateMachine : MonoBehaviour
                 {
                     menu.bautizadoOle();
                     victoryMenu = true;
+
+                    // PLAY SOUND Baptized
+                    AudioManager.audioManagerRef.PlaySound("victory_voices");
                 }
                 break;
             case States.Lose:

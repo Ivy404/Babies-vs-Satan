@@ -48,77 +48,77 @@ MonoBehaviour:
   - name: baby_blah
     clip: {fileID: 8300000, guid: 4d6b124bd57451848ac4ffde559dccb6, type: 3}
     volume: 1
-    pitch: 0
+    pitch: 1
     loop: 0
     outputAudioMixerGroup: {fileID: 0}
     source: {fileID: 0}
   - name: glass_break
     clip: {fileID: 8300000, guid: 75b33969545ab8746ada4b864502706e, type: 3}
     volume: 0.5
-    pitch: 0
+    pitch: 1
     loop: 0
     outputAudioMixerGroup: {fileID: 0}
     source: {fileID: 0}
   - name: victory_voices
     clip: {fileID: 8300000, guid: 4827aa8f1a5a34c43a6ff1b9c83a8a88, type: 3}
     volume: 0.5
-    pitch: 0
+    pitch: 1
     loop: 0
     outputAudioMixerGroup: {fileID: 0}
     source: {fileID: 0}
   - name: victory_fanfare
     clip: {fileID: 8300000, guid: da7df28fc19859d4eb912916870bd803, type: 3}
     volume: 0.5
-    pitch: 0
+    pitch: 1
     loop: 0
     outputAudioMixerGroup: {fileID: 0}
     source: {fileID: 0}
   - name: awww
     clip: {fileID: 8300000, guid: 7f7457ea75ba7d9429eaf86a4ce038da, type: 3}
     volume: 0.5
-    pitch: 0
+    pitch: 1
     loop: 0
     outputAudioMixerGroup: {fileID: 0}
     source: {fileID: 0}
   - name: victory_cheers
     clip: {fileID: 8300000, guid: 079287817cd3e58479520cd7fbd4835c, type: 3}
     volume: 0.5
-    pitch: 0
+    pitch: 1
     loop: 0
     outputAudioMixerGroup: {fileID: 0}
     source: {fileID: 0}
   - name: bumper
     clip: {fileID: 8300000, guid: f825f74a43ac4ee43b3727f99b11c509, type: 3}
     volume: 0.5
-    pitch: 0
+    pitch: 1
     loop: 0
     outputAudioMixerGroup: {fileID: 0}
     source: {fileID: 0}
   - name: water_splash
     clip: {fileID: 8300000, guid: caca071cd9b01f54a9e6204e371c06bd, type: 3}
     volume: 0.5
-    pitch: 0
+    pitch: 1
     loop: 0
     outputAudioMixerGroup: {fileID: 0}
     source: {fileID: 0}
   - name: roulette
     clip: {fileID: 8300000, guid: 88863cc0b103b454dbe70f64b1a04110, type: 3}
     volume: 0.5
-    pitch: 0
+    pitch: 1
     loop: 0
     outputAudioMixerGroup: {fileID: 0}
     source: {fileID: 0}
   - name: thud1
     clip: {fileID: 8300000, guid: 053d67b3d7f275042ad612ea755472aa, type: 3}
     volume: 0.5
-    pitch: 0
+    pitch: 1
     loop: 0
     outputAudioMixerGroup: {fileID: 0}
     source: {fileID: 0}
   - name: impact_menu
     clip: {fileID: 8300000, guid: 88372aba98a5e634caa1ccb69421c056, type: 3}
     volume: 0.5
-    pitch: 0
+    pitch: 1
     loop: 0
     outputAudioMixerGroup: {fileID: 0}
     source: {fileID: 0}

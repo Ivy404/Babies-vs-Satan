@@ -24,20 +24,22 @@ public class WindowTrigger : MonoBehaviour
         Debug.Log(other.gameObject.GetComponent<Rigidbody2D>().velocity.sqrMagnitude);
         //other.gameObject.GetComponent<Rigidbody2D>().velocity.sqrMagnitude < 60
         if(other.gameObject.GetComponent<Rigidbody2D>().velocity.sqrMagnitude > 50){
-        foreach(GameObject shard in shards){
-            shard.SetActive(true);
-            shard.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(0.30f, 3.0f), Random.Range(-1.0f, 1.0f));
-        }
-        /*
+            foreach(GameObject shard in shards){
+                shard.SetActive(true);
+                shard.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(0.30f, 3.0f), Random.Range(-1.0f, 1.0f));
+            }
+            /*
         
-        for(int i = 0; i < windtrig.Length; i++){
-            Debug.Log(windtrig[i].name);
-            windtrig[i].SetActive(false);
-        }*/
-        foreach(GameObject go in windtrig){
-            go.SetActive(false);
-        }
+            for(int i = 0; i < windtrig.Length; i++){
+                Debug.Log(windtrig[i].name);
+                windtrig[i].SetActive(false);
+            }*/
+            foreach(GameObject go in windtrig){
+                go.SetActive(false);
+            }
 
+            // PLAY SOUND glass breaking
+            AudioManager.audioManagerRef.PlaySound("glass_break");
         }
     }
 }
