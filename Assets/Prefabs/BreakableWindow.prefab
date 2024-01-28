@@ -227,6 +227,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7986189361177264997, guid: 3b4347d616de8654c8a7673821be1f7e, type: 3}
+      propertyPath: m_TagString
+      value: isCristal
+      objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 3b4347d616de8654c8a7673821be1f7e, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.51
@@ -287,17 +291,33 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7519722154212866590, guid: 3b4347d616de8654c8a7673821be1f7e, type: 3}
+      propertyPath: m_TagString
+      value: isCristal
+      objectReference: {fileID: 0}
     - target: {fileID: -3351868363131983666, guid: 3b4347d616de8654c8a7673821be1f7e, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3351868363131983666, guid: 3b4347d616de8654c8a7673821be1f7e, type: 3}
+      propertyPath: m_TagString
+      value: isCristal
       objectReference: {fileID: 0}
     - target: {fileID: -469542070303478727, guid: 3b4347d616de8654c8a7673821be1f7e, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -469542070303478727, guid: 3b4347d616de8654c8a7673821be1f7e, type: 3}
+      propertyPath: m_TagString
+      value: isCristal
+      objectReference: {fileID: 0}
     - target: {fileID: 7751269498262281042, guid: 3b4347d616de8654c8a7673821be1f7e, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7751269498262281042, guid: 3b4347d616de8654c8a7673821be1f7e, type: 3}
+      propertyPath: m_TagString
+      value: isCristal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

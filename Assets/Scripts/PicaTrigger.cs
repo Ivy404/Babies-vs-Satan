@@ -22,19 +22,23 @@ public class PicaTrigger : MonoBehaviour
         
     }
      private void OnTriggerEnter2D(Collider2D other) {
-        babyInside = true;
-        Debug.Log(
-            other.gameObject.name
-        );
-        topPica.SetActive(false);
+        if(other.gameObject.tag != "isCristal"){
+            babyInside = true;
+            Debug.Log(
+                other.gameObject.name
+            );
+            topPica.SetActive(false);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other) {
-        babyInside = false;
-        Debug.Log(
-            other.gameObject.name
-        );
-        topPica.SetActive(true);
+        if(other.gameObject.tag != "isCristal"){
+            babyInside = false;
+            Debug.Log(
+                other.gameObject.name
+            );
+            topPica.SetActive(true);
+        }
     }
 
     public bool isBabyIn(){
