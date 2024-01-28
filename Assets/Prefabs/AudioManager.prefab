@@ -150,3 +150,10 @@ MonoBehaviour:
     loop: 0
     outputAudioMixerGroup: {fileID: 0}
     source: {fileID: 0}
+  - name: title3
+    clip: {fileID: 8300000, guid: f997b27ccba4d6d4e86ecaeaf890c37b, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    outputAudioMixerGroup: {fileID: 0}
+    source: {fileID: 0}

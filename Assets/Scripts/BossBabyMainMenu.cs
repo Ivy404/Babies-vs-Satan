@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 public class BossBabyMainMenu : MonoBehaviour
 {
     [SerializeField]
+    private int selflvlid;
+    [SerializeField]
     private bool testmode;
     [SerializeField]
     private GameObject main;
@@ -208,5 +210,9 @@ public class BossBabyMainMenu : MonoBehaviour
 
     public void loadNextLevel(){
         loadLevel(nextLevel);
+    }
+
+    public void resetlvl(){
+        loadLevel(selflvlid);
     }
 }
