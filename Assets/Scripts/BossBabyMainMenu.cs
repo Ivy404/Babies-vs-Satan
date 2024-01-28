@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -44,7 +45,7 @@ public class BossBabyMainMenu : MonoBehaviour
 
         string[] surnames = sts.Split(",");
 
-        sts = Resources.Load("surnames_list").ToString();
+        sts = Resources.Load("modifiers_list").ToString();
 
         string[] modifiers = sts.Split(",");
 
@@ -54,30 +55,36 @@ public class BossBabyMainMenu : MonoBehaviour
             nameBuilder = "";
             // choose name
             nChoose = Random.Range(0, names.Length - 1);
-            nameBuilder += names[nChoose];
+            nameBuilder += names[nChoose] + " ";
             // save initial 1
             initials[i] = names[nChoose][0] + ". ";
-            nameBuilder += chooseWithProbability(0.2f, names) + " ";
+            // second name
+            temp = chooseWithProbability(0.2f, names);
+            if (!temp.Equals(""))
+            {
+                nameBuilder += temp + " ";
+            }
 
             // choose surname
             nChoose = Random.Range(0, surnames.Length - 1);
             nameBuilder += surnames[nChoose];
             // save initial 2
-            initials[i] = surnames[nChoose][0] + ".";
+            initials[i] += surnames[nChoose][0] + ".";
 
             for (int j = 0; j < 4; j++)
             {
-                temp = chooseWithProbability(0.8f / (float)j, surnames);
+                temp = chooseWithProbability(0.5f / (float)(j+1), surnames);
                 if (!temp.Equals(""))
                 {
                     nameBuilder += " " + temp;
                 }
             }
+            // modifier
+            nameBuilder += " " + chooseWithProbability(0.8f, modifiers);
             // save name
             names_c[i] = nameBuilder;
         }
 
-        for (int i = 0;i < 8; i++) { Debug.Log(names_c[i]); }
 
     }
 
@@ -177,7 +184,12 @@ public class BossBabyMainMenu : MonoBehaviour
     public void bautizadoOle(){
 
         // select name
-        //Read the text from directly from the test.txt file
+        Transform bb = roulete.transform.GetChild(1);
+
+        for (int i=0; i < bb.childCount; i++) 
+        {
+            bb.GetChild(i).GetComponent<TextMeshProUGUI>().SetText(initials[i]);
+        }
         // end
 
         todobautizado = true;
@@ -186,7 +198,9 @@ public class BossBabyMainMenu : MonoBehaviour
         victoryScreen.SetActive(true);
         AudioManager.audioManagerRef.PlaySound("roulette");
         spinO = roulete.GetComponent<RectTransform>();
-        fRotations = 3.0f + Random.value;
+        float radd = Random.Range(0.01f, 0.99f);
+        fRotations = -3.0f - radd;
+        namemsg.GetComponent<TextMeshProUGUI>().SetText(names_c[(2+(int) (radd/0.125f))%8]);
         if (pauseScreen != null){
             pauseScreen.SetActive(false);
         }
