@@ -5,17 +5,12 @@ using UnityEngine;
 public class BumperScript : MonoBehaviour
 {
     private Animator _animator;
+    public float bumpforce = 5.0f;
 
     // Start is called before the first frame update
     void Start()
     {
         _animator = GetComponent<Animator>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     // This function should be called once the baby collides with the Bumper
