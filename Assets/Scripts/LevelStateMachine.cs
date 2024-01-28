@@ -59,6 +59,10 @@ public class LevelStateMachine : MonoBehaviour
             state = States.Win;
             Debug.Log("You win!!");
             camManager.victory();
+
+            // PLAY SOUNDS victory
+            AudioManager.audioManagerRef.PlaySound("victory_fanfare");
+            AudioManager.audioManagerRef.PlaySound("victory_cheers");
         }
         // State Machine
         switch (state)
@@ -85,7 +89,7 @@ public class LevelStateMachine : MonoBehaviour
             case States.Throw:
                 if (priest.BabyReleased()) // change for babyReleased
                 {
-                    babybehaviour.CreateBaby();
+                    babybehaviour.CreateBaby(priest.skincolor, priest.clothcolor);
                     babybehaviour.ThrowBaby();
                     state = States.Waiting;
                 }

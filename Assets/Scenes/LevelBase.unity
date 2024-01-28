@@ -123,28 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &927693027 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4742261777934835818, guid: 8e18530b3ccca9149a9e4f86c2585c83, type: 3}
-  m_PrefabInstance: {fileID: 7750817444906175877}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38aaa5e72fa06d641b20dd75ec849163, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &927693028 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3652147958162819127, guid: 8e18530b3ccca9149a9e4f86c2585c83, type: 3}
-  m_PrefabInstance: {fileID: 7750817444906175877}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1b2c24a077acc7458a96961c45222c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &7750817444906175877
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -153,10 +131,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 603005294932662358, guid: 8e18530b3ccca9149a9e4f86c2585c83, type: 3}
-      propertyPath: orthographic size
-      value: 16
-      objectReference: {fileID: 0}
     - target: {fileID: 1999414194399134216, guid: 8e18530b3ccca9149a9e4f86c2585c83, type: 3}
       propertyPath: m_Name
       value: BaseLevelSmall
@@ -201,22 +175,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6557937869728524719, guid: 8e18530b3ccca9149a9e4f86c2585c83, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6557937869728524719, guid: 8e18530b3ccca9149a9e4f86c2585c83, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 10.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8252034458691868570, guid: 8e18530b3ccca9149a9e4f86c2585c83, type: 3}
-      propertyPath: menu
-      value: 
-      objectReference: {fileID: 927693027}
-    - target: {fileID: 8252034458691868570, guid: 8e18530b3ccca9149a9e4f86c2585c83, type: 3}
-      propertyPath: camManager
-      value: 
-      objectReference: {fileID: 927693028}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

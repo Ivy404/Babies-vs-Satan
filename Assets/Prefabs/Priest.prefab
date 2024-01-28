@@ -95,6 +95,15 @@ MonoBehaviour:
   _ready: 0
   _releaseBaby: 0
   _babySlot: {fileID: 4041684194756260620}
+  skinColors:
+  - {r: 0.909804, g: 0.8431373, b: 0.62352943, a: 1}
+  - {r: 0.9215687, g: 0.85098046, b: 0.52156866, a: 1}
+  - {r: 0.87843144, g: 0.7568628, b: 0.41960788, a: 1}
+  - {r: 0.54509807, g: 0.34901962, b: 0.24313727, a: 1}
+  - {r: 0.25490198, g: 0.1254902, b: 0.08627451, a: 1}
+  - {r: 0.6117647, g: 0.41960788, b: 0.2627451, a: 1}
+  skincolor: {r: 0, g: 0, b: 0, a: 0}
+  clothcolor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &833717478525594145
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -212,6 +221,18 @@ PrefabInstance:
     - target: {fileID: 2300785209920890049, guid: 5502a7cbd5dafe443836eeae918c090a, type: 3}
       propertyPath: m_Name
       value: BabySlot
+      objectReference: {fileID: 0}
+    - target: {fileID: 3488214839154144416, guid: 5502a7cbd5dafe443836eeae918c090a, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5729352
+      objectReference: {fileID: 0}
+    - target: {fileID: 3488214839154144416, guid: 5502a7cbd5dafe443836eeae918c090a, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5729352
+      objectReference: {fileID: 0}
+    - target: {fileID: 3488214839154144416, guid: 5502a7cbd5dafe443836eeae918c090a, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9716981
       objectReference: {fileID: 0}
     - target: {fileID: 8232749930664246145, guid: 5502a7cbd5dafe443836eeae918c090a, type: 3}
       propertyPath: m_LocalPosition.x
