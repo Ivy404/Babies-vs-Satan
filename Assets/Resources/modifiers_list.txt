@@ -1,12 +1,1 @@
-I
-II
-III
-IV
-V
-VI
-VII
-VIII
-XI
-X
-XI
-XII
+I,II,III,IV,V,VI,VII,VIII,IX,X,XI,XII,XIII,XIV,XV,the Great,of Rome,of Athens,of New Zealand,of Spain,the Terrible,the Conqueror,the Bard,the Explorer,the Hunched,of the Farlands,the Creator
