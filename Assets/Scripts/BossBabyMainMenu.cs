@@ -123,6 +123,12 @@ public class BossBabyMainMenu : MonoBehaviour
     public void bautizadoOle(){
 
         // select name
+        //Read the text from directly from the test.txt file
+        StreamReader reader = new StreamReader("names_list.txt");
+        string sts = reader.ReadToEnd();
+        reader.Close();
+
+        Debug.Log(sts);
         // end
 
         todobautizado = true;
