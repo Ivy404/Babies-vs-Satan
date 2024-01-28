@@ -28,6 +28,9 @@ public class PicaTrigger : MonoBehaviour
                 other.gameObject.name
             );
             topPica.SetActive(false);
+
+            // PLAY SOUND water splash
+            AudioManager.audioManagerRef.PlaySound("water_splash");
         }
     }
 
@@ -38,6 +41,9 @@ public class PicaTrigger : MonoBehaviour
                 other.gameObject.name
             );
             topPica.SetActive(true);
+
+            // PLAY SOUND awww
+            AudioManager.audioManagerRef.PlaySound("awww");
         }
     }
 

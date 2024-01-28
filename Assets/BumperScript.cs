@@ -29,7 +29,10 @@ public class BumperScript : MonoBehaviour
         Vector2 vector = Quaternion.Euler(0, 0, this.transform.eulerAngles.z) * Vector2.up;
         baby.velocity = baby.velocity + vector * bumpforce;
         baby.AddTorque(torquef);
-        // TO DO: apply the force to the baby here
+        // Apply the force to the baby here
         Debug.Log("Baby Pushed!");
+
+        // PLAY SOUND bumper
+        AudioManager.audioManagerRef.PlaySound("bumper");
     }
 }
