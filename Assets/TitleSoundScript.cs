@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class TitleSoundScript : MonoBehaviour
 {
+    public void PlayTitleName()
+    {
+        // PLAY SOUND menu
+        AudioManager.audioManagerRef.PlaySound("title3");
+    }
+
     public void PlayMenuSound()
     {
         // PLAY SOUND menu
-        AudioManager.audioManagerRef.PlaySound("impact_menu");
+        AudioManager.audioManagerRef.PlaySoundWithRandomPitch("impact_menu");
     }
 }
