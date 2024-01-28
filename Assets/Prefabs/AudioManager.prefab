@@ -157,3 +157,10 @@ MonoBehaviour:
     loop: 0
     outputAudioMixerGroup: {fileID: 0}
     source: {fileID: 0}
+  - name: baptised
+    clip: {fileID: 8300000, guid: ca403e6ac6b848f42a26a316008d08a7, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    outputAudioMixerGroup: {fileID: 0}
+    source: {fileID: 0}

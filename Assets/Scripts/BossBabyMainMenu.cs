@@ -21,6 +21,8 @@ public class BossBabyMainMenu : MonoBehaviour
     [SerializeField]
     private GameObject namemsg;
     [SerializeField]
+    private GameObject victoryBaptized;
+    [SerializeField]
     private int nextLevel;
     [SerializeField]
     private bool inmainmenu = false;
@@ -127,16 +129,19 @@ public class BossBabyMainMenu : MonoBehaviour
             {
                 makeRotations();
                 timewon += Time.deltaTime;
-            }else{
-                if (!playedsound)
-                {
-                    AudioManager.audioManagerRef.PlaySound("victory_voices");
-                    playedsound = true;
-                }
-                if(bapttime < waitBaptized)
+            }else
+            {
+                Debug.Log("hi");
+                if (bapttime < waitBaptized)
                 {
                     bapttime += Time.deltaTime;
-                    namemsg.transform.localScale = Vector3.Lerp(Vector3.zero, Vector3.one * 0.7f, bapttime / waitBaptized);
+                    victoryBaptized.transform.localScale = Vector3.Lerp(Vector3.zero, Vector3.one * 0.7f, bapttime / waitBaptized);
+                    namemsg.SetActive(true);
+                }
+                if (!playedsound)
+                {
+                    AudioManager.audioManagerRef.PlaySound("baptised");
+                    playedsound = true;
                 }
             }
         }

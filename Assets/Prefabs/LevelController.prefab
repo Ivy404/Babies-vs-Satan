@@ -73,5 +73,7 @@ MonoBehaviour:
   babybehaviour: {fileID: 2561468612202220128}
   priest: {fileID: 0}
   pila: {fileID: 0}
-  winCon: 3
+  winCon: 1
+  menu: {fileID: 0}
+  camManager: {fileID: 0}
   state: 0

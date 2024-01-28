@@ -434,6 +434,7 @@ MonoBehaviour:
   victoryScreen: {fileID: 6212717999980898897}
   roulete: {fileID: 0}
   namemsg: {fileID: 0}
+  victoryBaptized: {fileID: 0}
   nextLevel: 0
   inmainmenu: 0
   waitUntil: 4
@@ -1718,10 +1719,11 @@ MonoBehaviour:
   victoryScreen: {fileID: 6212717999980898897}
   roulete: {fileID: 1559090478318287374}
   namemsg: {fileID: 4067894271205880441}
+  victoryBaptized: {fileID: 6646942903724764248}
   nextLevel: 0
   inmainmenu: 0
   waitUntil: 5
-  waitBaptized: 1
+  waitBaptized: 0.4
 --- !u!114 &6789565684076246654
 MonoBehaviour:
   m_ObjectHideFlags: 0
