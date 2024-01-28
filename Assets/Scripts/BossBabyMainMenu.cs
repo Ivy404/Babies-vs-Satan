@@ -28,11 +28,15 @@ public class BossBabyMainMenu : MonoBehaviour
     private bool pausado = false;
     [SerializeField]
     private float waitUntil = 4.0f;
+    [SerializeField]
+    private float waitBaptized = 1.0f;
     private float timewon = 0f;
+    private float bapttime = 0f;
     private RectTransform spinO;
     private float fRotations;
     private string[] names_c;
     private string[] initials;
+    private bool playedsound = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -124,7 +128,16 @@ public class BossBabyMainMenu : MonoBehaviour
                 makeRotations();
                 timewon += Time.deltaTime;
             }else{
-                namemsg.SetActive(true);
+                if (!playedsound)
+                {
+                    AudioManager.audioManagerRef.PlaySound("victory_voices");
+                    playedsound = true;
+                }
+                if(bapttime < waitBaptized)
+                {
+                    bapttime += Time.deltaTime;
+                    namemsg.transform.localScale = Vector3.Lerp(Vector3.zero, Vector3.one * 0.7f, bapttime / waitBaptized);
+                }
             }
         }
     }
