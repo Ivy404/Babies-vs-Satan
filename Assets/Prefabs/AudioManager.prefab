@@ -124,7 +124,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: pipes
     clip: {fileID: 8300000, guid: 27da0303a4c751c4c983fde0660fc88f, type: 3}
-    volume: 0.25
+    volume: 0.2
     pitch: 1
     loop: 0
     outputAudioMixerGroup: {fileID: 0}
@@ -132,6 +132,13 @@ MonoBehaviour:
   - name: thud2
     clip: {fileID: 8300000, guid: cff72c3bb4f7e7e48a252c6045d06f17, type: 3}
     volume: 0.25
+    pitch: 1
+    loop: 0
+    outputAudioMixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: effort
+    clip: {fileID: 8300000, guid: 34e70ef43486d4c458b1e40d369b3cb0, type: 3}
+    volume: 0.7
     pitch: 1
     loop: 0
     outputAudioMixerGroup: {fileID: 0}
