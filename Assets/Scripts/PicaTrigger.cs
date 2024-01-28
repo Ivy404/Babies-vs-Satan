@@ -28,6 +28,9 @@ public class PicaTrigger : MonoBehaviour
                 other.gameObject.name
             );
             topPica.SetActive(false);
+
+            // PLAY SOUND water splash
+            AudioManager.audioManagerRef.PlaySound("water_splash");
         }
     }
 

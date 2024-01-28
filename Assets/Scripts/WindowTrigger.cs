@@ -39,7 +39,7 @@ public class WindowTrigger : MonoBehaviour
             }
 
             // PLAY SOUND glass breaking
-            AudioManager.audioManagerRef.PlaySound("glass_break");
+            AudioManager.audioManagerRef.PlaySoundWithRandomPitch("glass_break");
         }
     }
 }
