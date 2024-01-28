@@ -129,3 +129,10 @@ MonoBehaviour:
     loop: 0
     outputAudioMixerGroup: {fileID: 0}
     source: {fileID: 0}
+  - name: thud2
+    clip: {fileID: 8300000, guid: cff72c3bb4f7e7e48a252c6045d06f17, type: 3}
+    volume: 0.25
+    pitch: 1
+    loop: 0
+    outputAudioMixerGroup: {fileID: 0}
+    source: {fileID: 0}
