@@ -85,7 +85,7 @@ public class LevelStateMachine : MonoBehaviour
             case States.Throw:
                 if (priest.BabyReleased()) // change for babyReleased
                 {
-                    babybehaviour.CreateBaby();
+                    babybehaviour.CreateBaby(priest.skincolor, priest.clothcolor);
                     babybehaviour.ThrowBaby();
                     state = States.Waiting;
                 }

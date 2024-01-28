@@ -32,9 +32,12 @@ public class LaunchBaby : MonoBehaviour
 
     }
 
-    public void CreateBaby()
+    public void CreateBaby(Color skin, Color cloth)
     {
         babyObj = Instantiate(babyprefab);
+        Transform bb = babyObj.transform.GetChild(0).GetChild(0);
+        bb.GetChild(2).GetComponent<SpriteRenderer>().color = skin; // face
+        bb.GetChild(3).GetComponent<SpriteRenderer>().color = cloth; // cloth
         baby = babyObj.GetComponent<Rigidbody2D>();
         if (baby != null)
         {
