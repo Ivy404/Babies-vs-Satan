@@ -295,6 +295,30 @@ PrefabInstance:
       propertyPath: m_TagString
       value: isCristal
       objectReference: {fileID: 0}
+    - target: {fileID: -7165880034659061930, guid: b693fa123242db24886f6ef969dfe671, type: 3}
+      propertyPath: m_SortingLayer
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7165880034659061930, guid: b693fa123242db24886f6ef969dfe671, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1562776811
+      objectReference: {fileID: 0}
+    - target: {fileID: -7143818262520823776, guid: b693fa123242db24886f6ef969dfe671, type: 3}
+      propertyPath: m_SortingLayer
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7143818262520823776, guid: b693fa123242db24886f6ef969dfe671, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1562776811
+      objectReference: {fileID: 0}
+    - target: {fileID: -4691381383639723871, guid: b693fa123242db24886f6ef969dfe671, type: 3}
+      propertyPath: m_SortingLayer
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4691381383639723871, guid: b693fa123242db24886f6ef969dfe671, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1562776811
+      objectReference: {fileID: 0}
     - target: {fileID: -3351868363131983666, guid: b693fa123242db24886f6ef969dfe671, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -310,6 +334,38 @@ PrefabInstance:
     - target: {fileID: -469542070303478727, guid: b693fa123242db24886f6ef969dfe671, type: 3}
       propertyPath: m_TagString
       value: isCristal
+      objectReference: {fileID: 0}
+    - target: {fileID: 2608102985780763276, guid: b693fa123242db24886f6ef969dfe671, type: 3}
+      propertyPath: m_SortingLayer
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2608102985780763276, guid: b693fa123242db24886f6ef969dfe671, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1562776811
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153083917793864611, guid: b693fa123242db24886f6ef969dfe671, type: 3}
+      propertyPath: m_SortingLayer
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153083917793864611, guid: b693fa123242db24886f6ef969dfe671, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1562776811
+      objectReference: {fileID: 0}
+    - target: {fileID: 5638863962959275187, guid: b693fa123242db24886f6ef969dfe671, type: 3}
+      propertyPath: m_SortingLayer
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5638863962959275187, guid: b693fa123242db24886f6ef969dfe671, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1562776811
+      objectReference: {fileID: 0}
+    - target: {fileID: 7222661070148608283, guid: b693fa123242db24886f6ef969dfe671, type: 3}
+      propertyPath: m_SortingLayer
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7222661070148608283, guid: b693fa123242db24886f6ef969dfe671, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1562776811
       objectReference: {fileID: 0}
     - target: {fileID: 7751269498262281042, guid: b693fa123242db24886f6ef969dfe671, type: 3}
       propertyPath: m_IsActive
@@ -458,7 +514,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0ce7e1831a8a8441a5419b540d8d401, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colors: []
   minLifespan: 4
   maxLifespan: 7
 --- !u!1 &1652723145403342740 stripped
@@ -550,7 +605,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0ce7e1831a8a8441a5419b540d8d401, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colors: []
   minLifespan: 4
   maxLifespan: 7
 --- !u!1 &3172338437362461704 stripped
@@ -642,7 +696,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0ce7e1831a8a8441a5419b540d8d401, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colors: []
   minLifespan: 4
   maxLifespan: 7
 --- !u!4 &7661320541021584664 stripped
@@ -739,7 +792,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0ce7e1831a8a8441a5419b540d8d401, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colors: []
   minLifespan: 4
   maxLifespan: 7
 --- !u!1 &7806699053259765853 stripped
@@ -831,7 +883,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0ce7e1831a8a8441a5419b540d8d401, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colors: []
   minLifespan: 4
   maxLifespan: 7
 --- !u!1 &8844460762591715789 stripped
