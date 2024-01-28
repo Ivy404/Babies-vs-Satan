@@ -6,21 +6,66 @@ using UnityEngine;
 public class GodSaveUsScript : MonoBehaviour
 {
     [SerializeField]
-    private int[] levelStates;
+    private int[] levelId;
+    [SerializeField]
+    private string[] levelChildName;
+    [SerializeField]
+    private int[] levelState;
+    void Start()
+    {
+        if(!PlayerPrefs.HasKey("levelnumber")){
+            Debug.Log(PlayerPrefs.GetInt("levelnumber"));
+            levelChildName = new string[levelId.Length];
+            levelState = new int[levelId.Length];
+            saveProgress();
+        }
+        loadProgress();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Space)){
+            saveProgress();
+        }
+        if(Input.GetKeyDown(KeyCode.Escape)){
+            loadProgress();
+        }
+        
+    }
+
+    public void saveProgress(){
+        PlayerPrefs.SetInt("levelnumber", levelId.Length);
+        for(int i = 0; i< levelId.Length; i++){
+            PlayerPrefs.SetString("level"+levelId[i].ToString()+"childname", levelChildName[i]);
+            PlayerPrefs.SetInt("level"+levelId[i].ToString()+"state", levelState[i]);
+        }
+        PlayerPrefs.Save();
+    }
+
+    public void loadProgress(){
+        levelChildName = new string[levelId.Length];
+        levelState = new int[levelId.Length];
+        for(int i = 0; i< levelId.Length; i++){
+            levelChildName[i] = PlayerPrefs.GetString("level"+levelId[i].ToString()+"childname");
+            levelState[i] = PlayerPrefs.GetInt("level"+levelId[i].ToString()+"state");
+        }
+    }
+    /*[SerializeField]
+    private string[] levelStates;
+    private bool[] levelPassed;
     // Start is called before the first frame update
     void Start()
     {
         
         if(!saveFileExists()){
-            /*string data = "";
-            foreach(int num in levelStates){
-                data = data + num.ToString() + '\n';
-            }
-            writeToFile(data, "saveData.wad");*/
             saveCurrentData();
         }else{
             readFileData();
         }
+        levelPassed = new bool[levelStates.Length];
+        updatePassedLevels();
+        
     }
 
     // Update is called once per frame
@@ -67,7 +112,7 @@ public class GodSaveUsScript : MonoBehaviour
     }
     public void saveCurrentData(){
         string data = "";
-        foreach(int num in levelStates){
+        foreach(string num in levelStates){
             data = data + num.ToString() + '\n';
         }
         writeToFile(data, "saveData.wad");
@@ -78,9 +123,19 @@ public class GodSaveUsScript : MonoBehaviour
         //Debug.Log(path);
         string[] sdata = readFromFile(path).Split('\n');
         int l = sdata.Length -1;
-        levelStates = new int[l];
+        levelStates = new string[l];
         for(int i=0; i< l; i++){
-            int.TryParse(sdata[i], out levelStates[i]);
+            levelStates[i] = sdata[i];
         }
     }
+    public void setLevelState(int level, string state){
+        levelStates[level] = state;
+    }
+    public void updatePassedLevels(){
+        for(int i=0;i<levelPassed.Length;i++){
+            Debug.Log(levelStates[i].Split(';'));
+            bool ls = (levelStates[i].Split(';')[1] != "");
+            levelPassed[i] = ls;
+        }
+    }*/
 }
