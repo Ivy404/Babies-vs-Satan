@@ -1048,6 +1048,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BreakableWindowV2
       objectReference: {fileID: 0}
+    - target: {fileID: 7256404435230311208, guid: c1852f5c21b8fb747958d9efa4f3448f, type: 3}
+      propertyPath: colors.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7295184315457109122, guid: c1852f5c21b8fb747958d9efa4f3448f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.9
@@ -1086,6 +1090,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7295184315457109122, guid: c1852f5c21b8fb747958d9efa4f3448f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7661320541021584664, guid: c1852f5c21b8fb747958d9efa4f3448f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7661320541021584664, guid: c1852f5c21b8fb747958d9efa4f3448f, type: 3}
+      propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
