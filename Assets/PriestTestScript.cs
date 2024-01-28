@@ -55,6 +55,9 @@ public class PriestTestScript : MonoBehaviour
         _animator.SetTrigger("Throw");
         if(_babySlot != null) _babySlot.SetActive(false);
         //Debug.Log("Throw!");
+
+        // PLAY SOUND effort
+        AudioManager.audioManagerRef.PlaySound("effort");
     }
 
     // method to do the actual baby release. Called when the throw animation is finished
