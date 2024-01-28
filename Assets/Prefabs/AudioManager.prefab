@@ -115,3 +115,10 @@ MonoBehaviour:
     loop: 0
     outputAudioMixerGroup: {fileID: 0}
     source: {fileID: 0}
+  - name: impact_menu
+    clip: {fileID: 8300000, guid: 88372aba98a5e634caa1ccb69421c056, type: 3}
+    volume: 0.5
+    pitch: 0
+    loop: 0
+    outputAudioMixerGroup: {fileID: 0}
+    source: {fileID: 0}
