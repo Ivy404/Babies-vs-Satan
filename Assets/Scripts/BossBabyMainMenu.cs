@@ -105,7 +105,7 @@ public class BossBabyMainMenu : MonoBehaviour
 
     public void gobackMainMenu(){
         if(todobautizado){
-            loadLevel(nextLevel);
+            loadLevel(0);
         }
         else{
             main.SetActive(true);
@@ -140,5 +140,9 @@ public class BossBabyMainMenu : MonoBehaviour
         if (pauseScreen != null){
             pauseScreen.SetActive(false);
         }
+    }
+
+    public void loadNextLevel(){
+        loadLevel(nextLevel);
     }
 }
