@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -30,10 +28,67 @@ public class BossBabyMainMenu : MonoBehaviour
     private float timewon = 0f;
     private RectTransform spinO;
     private float fRotations;
+    private string[] names_c;
+    private string[] initials;
     // Start is called before the first frame update
     void Start()
     {
+        names_c = new string[8];
+        initials = new string[8];
 
+        string sts = Resources.Load("names_list").ToString();
+
+        string[] names = sts.Split(",");
+
+        sts = Resources.Load("surnames_list").ToString();
+
+        string[] surnames = sts.Split(",");
+
+        sts = Resources.Load("surnames_list").ToString();
+
+        string[] modifiers = sts.Split(",");
+
+        int nChoose;
+        string nameBuilder, temp;
+        for (int i = 0; i < 8; i++) {
+            nameBuilder = "";
+            // choose name
+            nChoose = Random.Range(0, names.Length - 1);
+            nameBuilder += names[nChoose];
+            // save initial 1
+            initials[i] = names[nChoose][0] + ". ";
+            nameBuilder += chooseWithProbability(0.2f, names) + " ";
+
+            // choose surname
+            nChoose = Random.Range(0, surnames.Length - 1);
+            nameBuilder += surnames[nChoose];
+            // save initial 2
+            initials[i] = surnames[nChoose][0] + ".";
+
+            for (int j = 0; j < 4; j++)
+            {
+                temp = chooseWithProbability(0.8f / (float)j, surnames);
+                if (!temp.Equals(""))
+                {
+                    nameBuilder += " " + temp;
+                }
+            }
+            // save name
+            names_c[i] = nameBuilder;
+        }
+
+        for (int i = 0;i < 8; i++) { Debug.Log(names_c[i]); }
+
+    }
+
+    string chooseWithProbability(float probability, string[] surnames)
+    {
+        float p = Random.value;
+        if (p < probability)
+        {
+            return surnames[Random.Range(0, surnames.Length - 1)];
+        }
+        return "";
     }
 
     // Update is called once per frame
@@ -120,10 +175,16 @@ public class BossBabyMainMenu : MonoBehaviour
     }
 
     public void bautizadoOle(){
+
+        // select name
+        //Read the text from directly from the test.txt file
+        // end
+
         todobautizado = true;
         main.SetActive(false);
         selectScreen.SetActive(false);
         victoryScreen.SetActive(true);
+        AudioManager.audioManagerRef.PlaySound("roulette");
         spinO = roulete.GetComponent<RectTransform>();
         fRotations = 3.0f + Random.value;
         if (pauseScreen != null){
