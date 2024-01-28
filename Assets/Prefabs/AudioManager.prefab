@@ -143,3 +143,10 @@ MonoBehaviour:
     loop: 0
     outputAudioMixerGroup: {fileID: 0}
     source: {fileID: 0}
+  - name: roulette_spawn
+    clip: {fileID: 8300000, guid: ab3ecc15469a83546ae30e7b84e9dc06, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    outputAudioMixerGroup: {fileID: 0}
+    source: {fileID: 0}
