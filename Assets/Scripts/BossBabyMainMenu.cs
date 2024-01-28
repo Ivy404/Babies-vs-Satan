@@ -69,7 +69,6 @@ public class BossBabyMainMenu : MonoBehaviour
     {
         float rot = Mathf.Lerp(0f, 360f*fRotations, 1f - Mathf.Pow(1f - timewon / waitUntil, 4));
         //rot = (rot % 360f) - 180f;
-        Debug.Log(rot);
         Vector3 angles = spinO.eulerAngles;
         angles.z = rot; // + rotationSpeed for right button
         spinO.eulerAngles = angles;
