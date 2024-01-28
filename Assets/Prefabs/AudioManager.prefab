@@ -75,7 +75,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: awww
     clip: {fileID: 8300000, guid: 7f7457ea75ba7d9429eaf86a4ce038da, type: 3}
-    volume: 0.5
+    volume: 0.4
     pitch: 1
     loop: 0
     outputAudioMixerGroup: {fileID: 0}

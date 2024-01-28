@@ -38,6 +38,9 @@ public class PicaTrigger : MonoBehaviour
                 other.gameObject.name
             );
             topPica.SetActive(true);
+
+            // PLAY SOUND awww
+            AudioManager.audioManagerRef.PlaySound("awww");
         }
     }
 
