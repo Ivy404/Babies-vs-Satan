@@ -444,6 +444,10 @@ PrefabInstance:
       propertyPath: nextLevel
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 4742261777934835818, guid: 8e18530b3ccca9149a9e4f86c2585c83, type: 3}
+      propertyPath: selflvlid
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5870581432542241233, guid: 8e18530b3ccca9149a9e4f86c2585c83, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.89
