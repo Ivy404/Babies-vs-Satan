@@ -13,6 +13,6 @@ public class TitleSoundScript : MonoBehaviour
     public void PlayMenuSound()
     {
         // PLAY SOUND menu
-        AudioManager.audioManagerRef.PlaySound("impact_menu");
+        AudioManager.audioManagerRef.PlaySoundWithRandomPitch("impact_menu");
     }
 }
