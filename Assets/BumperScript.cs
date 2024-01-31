@@ -20,18 +20,14 @@ public class BumperScript : MonoBehaviour
     {
         baby = b;
         _animator.SetTrigger("BumperHit");
-        Debug.Log("Bumper hit!");
+        baby.AddTorque(torquef);
+        //baby.velocity = Mathf.Sin(Vector3.Angle(this.transform.up,baby.velocity))*baby.velocity.magnitude*this.transform.up.normalized+this.transform.up * bumpforce;
+        baby.velocity = Mathf.Cos(Mathf.Deg2Rad * Vector3.Angle(this.transform.right, baby.velocity)) * baby.velocity.magnitude * this.transform.right.normalized + this.transform.up * bumpforce;
     }
 
     // This function is called when the animation of the bumper finishes
     private void PushBaby()
     {
-        Vector2 vector = Quaternion.Euler(0, 0, this.transform.eulerAngles.z) * Vector2.up;
-        baby.velocity = baby.velocity + vector * bumpforce;
-        baby.AddTorque(torquef);
-        // Apply the force to the baby here
-        Debug.Log("Baby Pushed!");
-
         // PLAY SOUND bumper
         AudioManager.audioManagerRef.PlaySound("bumper");
     }

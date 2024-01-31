@@ -23,17 +23,24 @@ public class LaunchBaby : MonoBehaviour
 
     private GameObject babyObj;
     private GameObject cLineObj;
+    private Transform center;
+    private Transform range;
     private Rigidbody2D baby;
     private Vector3 startPos = Vector3.zero;
     private Vector3 dir;
     // Start is called before the first frame update
     void Start()
     {
-
+        center = this.transform.GetChild(0);
+        range = this.transform.GetChild(1);
     }
 
     public void CreateBaby(Color skin, Color cloth)
     {
+        if (babyObj != null)
+        {
+            Destroy(babyObj.transform.GetChild(1).gameObject);
+        }
         babyObj = Instantiate(babyprefab);
         Transform bb = babyObj.transform.GetChild(0).GetChild(0);
         bb.GetChild(2).GetComponent<SpriteRenderer>().color = skin; // face
@@ -55,6 +62,12 @@ public class LaunchBaby : MonoBehaviour
                 startPos = cam.ScreenToWorldPoint(Input.mousePosition);
                 dragging = true;
                 createLine();
+
+                center.position = new Vector3(startPos.x, startPos.y, 20); // center
+                range.position = new Vector3(startPos.x, startPos.y, 20); // range
+
+                center.gameObject.SetActive(true);
+                range.gameObject.SetActive(true);
                 // Vector2 wp = cam.ScreenToWorldPoint(Input.mousePosition);
                 //baby.AddForce(new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * force);
             } else if (Input.GetKey(KeyCode.Mouse0) && dragging)
@@ -83,6 +96,9 @@ public class LaunchBaby : MonoBehaviour
 
             } else if (Input.GetKeyUp(KeyCode.Mouse0) && dragging)
             {
+                center.gameObject.SetActive(false);
+                range.gameObject.SetActive(false);
+
                 Vector3 direction = startPos - cam.ScreenToWorldPoint(Input.mousePosition);
                 float mgt = direction.sqrMagnitude;
                 if (mgt >= minDistance && mgt <= maxDistance)
@@ -100,7 +116,6 @@ public class LaunchBaby : MonoBehaviour
                 dir = direction;
                 dragging = false;
                 Destroy(cLineObj);
-
             }
         }
     }
@@ -133,6 +148,13 @@ public class LaunchBaby : MonoBehaviour
                 ));
 
         }
+    }
+
+
+
+    public void deletelastline() 
+    {
+        Destroy(babyObj.transform.GetChild(1).gameObject);
     }
 
     public void KillBabies()

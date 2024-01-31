@@ -19,9 +19,13 @@ public class FanImpulse : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other){
-        other.gameObject.GetComponent<Rigidbody2D>().velocity += new Vector2(transform.up.x,transform.up.y)*strength;
 
         // PLAY SOUND fan 'horn'
         AudioManager.audioManagerRef.PlaySound("pipes");
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        other.gameObject.GetComponent<Rigidbody2D>().velocity += new Vector2(transform.up.x, transform.up.y) * strength;
     }
 }

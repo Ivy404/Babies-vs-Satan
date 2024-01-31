@@ -42,8 +42,6 @@ public class LevelStateMachine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //  debug restart
-        if (Input.GetKeyDown(KeyCode.K)) { babybehaviour.KillBabies(); }
         // Evaluation of win con
         if (pila.isBabyIn() && state != States.Win)
         {
@@ -57,8 +55,9 @@ public class LevelStateMachine : MonoBehaviour
         if (winTimer >= winCon && state != States.Win)
         {
             state = States.Win;
-            Debug.Log("You win!!");
             camManager.victory();
+            babybehaviour.deletelastline();
+            babybehaviour.enabledInput = false;
 
             // PLAY SOUNDS victory
             AudioManager.audioManagerRef.PlaySound("victory_fanfare");
