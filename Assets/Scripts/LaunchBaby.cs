@@ -57,64 +57,6 @@ public class LaunchBaby : MonoBehaviour
     {
         if (enabledInput)
         {
-            if(Input.GetButton("AButton") && !dragging){
-                startPos = cam.transform.position;//cam.ScreenToWorldPoint(Input.mousePosition);
-                dragging = true;
-                createLine();
-
-                center.position = new Vector3(startPos.x, startPos.y, 20); // center
-                range.position = new Vector3(startPos.x, startPos.y, 20); // range
-
-                center.gameObject.SetActive(true);
-                range.gameObject.SetActive(true);
-            }else if(Input.GetButton("AButton") && dragging){
-                Vector3 direction =  new Vector3(Input.GetAxis("LStickH"), -Input.GetAxis("LStickV"), 0);
-                //Debug.Log(new Vector3(Input.GetAxis("LStickH"), Input.GetAxis("LStickV"), 0));
-                float mgt = maxForce *direction.sqrMagnitude;
-                lineR.SetPosition(0, anchor.transform.position);
-                if (mgt >= minDistance)
-                {
-                    lineR.enabled = true;
-                    forceM = (mgt - minDistance) / (maxDistance - minDistance);
-                    forceM = Mathf.Clamp(forceM, 0, 1);
-                    force = minForce + (maxForce - minForce) * forceM;
-                    float angle = Vector3.Angle(Vector3.right, direction);
-                    if (angle > 180)
-                    {
-                        angle = angle - 180;
-                    }
-                    drawLine(10, direction.normalized * force, angle, anchor.transform.position);
-                } else
-                {
-                    lineR.enabled = false;
-                    forceM = 0;
-                    force = 0;
-                }
-            }else if (!Input.GetKey(KeyCode.Mouse0) && !Input.GetKeyUp(KeyCode.Mouse0) && ! Input.GetButton("AButton") && dragging)
-            {
-                center.gameObject.SetActive(false);
-                range.gameObject.SetActive(false);
-
-                Vector3 direction = maxForce * new Vector3(Input.GetAxis("LStickH"), -Input.GetAxis("LStickV"), 0);
-                float mgt = direction.sqrMagnitude;
-                if (mgt >= minDistance && mgt <= maxDistance)
-                {
-                    forceM = (mgt - minDistance) / (maxDistance - minDistance);
-                } else if (mgt > maxDistance)
-                {
-                    forceM = 1.0f;
-                } else
-                {
-                    forceM = -1.0f;
-                    return;
-                }
-                force = minForce + (maxForce - minForce) * forceM;
-                dir = direction;
-                dragging = false;
-                Destroy(cLineObj);
-            }
-            
-
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 startPos = cam.ScreenToWorldPoint(Input.mousePosition);
