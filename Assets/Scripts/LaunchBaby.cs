@@ -101,6 +101,7 @@ public class LaunchBaby : MonoBehaviour
 
                 Vector3 direction = startPos - cam.ScreenToWorldPoint(Input.mousePosition);
                 float mgt = direction.sqrMagnitude;
+                Destroy(cLineObj);
                 if (mgt >= minDistance && mgt <= maxDistance)
                 {
                     forceM = (mgt - minDistance) / (maxDistance - minDistance);
@@ -115,7 +116,6 @@ public class LaunchBaby : MonoBehaviour
                 force = minForce + (maxForce - minForce) * forceM;
                 dir = direction;
                 dragging = false;
-                Destroy(cLineObj);
             }
         }
     }
